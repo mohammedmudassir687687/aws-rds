@@ -1,9 +1,14 @@
 package com.newproj.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import nonapi.io.github.classgraph.json.Id;
 
 public class Employee {
 	@Id
+	@NotNull
+	@Size(min = 1, max = 4)
 	private String empId;
 	private String name;
 	private String designation;

@@ -3,6 +3,8 @@ package com.newproj.controller;
 //import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,14 +44,14 @@ public class EmployeeController {
 	}
 	
 	@PostMapping(path = {"/employees"})
-	public String create(@RequestBody Employee user) {
+	public String create(@Valid @RequestBody Employee user) {
 		
 		return empservice.addEmployee(user);
 
 	}
 	
 	@PutMapping(path = {"/employees"})
-	public String update(@RequestBody Employee user) {
+	public String update(@Valid @RequestBody Employee user) {
 		return empservice.updateEmployee(user);
 	}
 
