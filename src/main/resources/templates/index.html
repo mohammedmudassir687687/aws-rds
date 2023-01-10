@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div align = "center">
+		<h1>Sales Details</h1>
+		<table border="1">
+			<thead>
+				<tr>
+					<th> ID </th>
+					<th> NAME </th>
+					<th> DESIGNATION </th>
+					<th> SALARY </th>
+				</tr>
+			</thead>
+				
+			<tbody>
+				<tr th:each="emp : ${employeesdata}">
+					<td th:text="${emp.empId}"/>
+					<td th:text="${emp.name}"/>
+					<td th:text="${emp.designation}"/>
+					<td th:text="${emp.salary}"/>			
+				</tr>
+			</tbody>
+		</table>	
+	</div>
+</body>
+</html>
