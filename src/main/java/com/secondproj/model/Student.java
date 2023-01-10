@@ -1,10 +1,15 @@
 package com.secondproj.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import nonapi.io.github.classgraph.json.Id;
 
 public class Student {
 
 	@Id
+	@NotNull
+	@Size(min = 1, max = 4)
 	private String stdId;
 	private String name;
 	private String subject;

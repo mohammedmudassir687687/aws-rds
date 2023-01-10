@@ -3,6 +3,8 @@ package com.secondproj.controller;
 //import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -49,14 +51,14 @@ public class StudentController {
 	}
 	
 	@PostMapping(path = {"/students"})
-	public String create(@RequestBody Student user) {
+	public String create(@Valid @RequestBody Student user) {
 		
 		return studentService.addStudent(user);
 
 	}
 	
 	@PutMapping(path = {"/students"})
-	public String update(@RequestBody Student user) {
+	public String update(@Valid @RequestBody Student user) {
 		return studentService.updateStudent(user);
 	}
 
